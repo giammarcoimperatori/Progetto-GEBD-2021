@@ -227,7 +227,7 @@ public class JcomeJava {
          
          
          /**********************ALGORTIMO*********************/
-		     Integer stepmax = 5;
+		     Integer stepmax = 1; //5 originariamente 
 			 System.out.println( "\n"
 		         		+ "\t\t\t\t   ____________________________\n"
 		 				+ "\t\t\t\t  |                            |\n"
@@ -236,6 +236,7 @@ public class JcomeJava {
 		 				+ "\n"
 		 				+ "");
 			 Integer min_comp = 10; Integer max_comp = 27;
+			 //Integer min_comp = 8; Integer max_comp = 28;
 			 System.out.println( "\n"
 		         		+ "\t\t\t\t  ______________________________\n"
 		 				+ "\t\t\t\t |                              |\n"
@@ -246,7 +247,7 @@ public class JcomeJava {
 		 				+ "");
   	
       	/*
-		 * Lista su cui salverò < <Step,Lista<archi della componente>, <arco,betweeness> >
+		 * Lista su cui salverÃ² < <Step,Lista<archi della componente>, <arco,betweeness> >
 		 * ---> Per il calcolo di Q
 		 */
 		List<Tuple2<Tuple2<Integer,List<List<Tuple2<String,String>>>>,Tuple2<Tuple2<String,String>,Float>>> BC = 
@@ -346,7 +347,7 @@ public class JcomeJava {
 			Integer NumeroComponent = (int) EdgesComponFiltered.count();
 			
 			/*
-			 * Lista su cui salverò < <Step,Lista<archi della componente>, <arco,betweeness> >
+			 * Lista su cui salverÃ² < <Step,Lista<archi della componente>, <arco,betweeness> >
 			 * ---> Per calcolare la betweeness massima e trovare l'arco da eliminare
 			 */
 			List<Tuple2<Tuple2<Integer,List<List<Tuple2<String,String>>>>,Tuple2<Tuple2<String,String>,Float>>> BC_k = 
@@ -444,7 +445,7 @@ public class JcomeJava {
 		
 		
 		System.out.println("\n\n\n\n\t- Q -\n");
-		System.out.println("\tvalue\t\t-n° componenti-\t\tgraph");
+		System.out.println("\tvalue\t\t-nÂ° componenti-\t\tgraph");
 		for(Tuple2<List<List<Tuple2<String,String>>>,Float> q :damnQ.collect()) {
 			DecimalFormat df = new DecimalFormat("#.###");
 			Integer n_edg = q._1().size();
@@ -481,7 +482,7 @@ public class JcomeJava {
 		count=0;
 		System.out.println("\t\t\t\tQ = "+maxQ._2()+"\n");
 		if(!sgrevato)System.out.println("\t\t\t\tComponente\t\tArchi");
-		else System.out.println("\t\t\t\tComponente\t\tN° archi");
+		else System.out.println("\t\t\t\tComponente\t\tNÂ° archi");
 		for(List<Tuple2<String,String>> comp : maxQ_graph) {
 			count++;
 			if(!sgrevato)System.out.println("\t\t\t\t"+count+".\t\t"+comp);
@@ -541,7 +542,7 @@ public class JcomeJava {
 			}
 			System.out.println("\t\t\t  - Componente "+num_comp+" -");
 			while(remaining!=0) {
-				step++;	//n° of ForwardMR
+				step++;	//nÂ° of ForwardMR
 				System.out.println("\t\t\t      [Step "+step+"]");
 				Start = ForwardMR(Start);
 			   		String random = boh2.first();
@@ -587,7 +588,9 @@ public class JcomeJava {
 				+ "\t|                                                                          |\n"
 				+ "\t|                    t  h  e                    e  n  d                    |\n"
 				+ "\t|__________________________________________________________________________|\n\n\n\n\n\n");
-			
+		
+
+		System.exit(1); //aggiunto			
 	}
 	
 }
